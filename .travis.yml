@@ -1,0 +1,10 @@
+language: node_js
+before_script:
+  - cd deck-editor
+  - npm install
+script: npm run-script build
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true

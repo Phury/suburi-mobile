@@ -1,0 +1,21 @@
+<div class="ui container">
+    <table class="ui table unstackable"
+           ng-repeat="(day, activitiesGrouped) in ctrl.activities track by $index"
+           ng-class="{'top attached': $index == 0, 'bottom attached': $index == ctrl.totalActivities-1, 'attached': $index}">
+        <thead>
+            <tr>
+                <th colspan="3">{{day}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="activity in activitiesGrouped">
+                <td>{{activity.name}}</td>
+                <td>{{activity.totalTime + 'h'}}</td>
+                <td>actions</td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="ui button fluid large primary">
+        commit
+    </button>
+</div>
